@@ -1,0 +1,122 @@
+@import '../style';
+// reset.scss 외 base 설정 파일
+// 폰트, root 등
+/* font-family: 'NanumSquare'; 400(R), 700(B), 800(EB), 300(L) */
+@import url(//cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css);
+@include font($base-font-eng-extra-light);
+@include font($base-font-eng-light);
+@include font($base-font-eng-medium);
+@include font($base-font-eng-book);
+@include font($base-font-eng-serif);
+
+:root,
+html {
+  font-size: $base-font-size;
+}
+
+body {
+  @include base-font;
+  font-size: 12px;
+  line-height: 1.5;
+  color: $text-color-default;
+}
+
+// button reset style
+%button-style-reset {
+  padding: 0;
+  border: 0;
+  background: none;
+  line-height: normal;
+  font: inherit;
+  color: inherit;
+  overflow: visible;
+  box-sizing: content-box;
+}
+
+button {
+  @extend %button-style-reset;
+  // user-select - 하위요소 선택 가능 여부
+  // user-select: [auto | none | text | contain | all]
+  user-select: none;
+}
+
+// input reset style
+input {
+  &[type='submit'],
+  &[type='reset'],
+  &[type='button'] {
+    @extend %button-style-reset;
+    // -webkit-apperance, -moz-apperance: [none | button | checkbox | scrollbarbutton-up]
+    appearance: button;
+  }
+}
+
+// anchor reset style
+a {
+  color: inherit;
+  &:link {
+    text-decoration: none
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+  }
+}
+
+@keyframes fadeInOpacity {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 0.6;
+  }
+}
+
+@keyframes slideUp {
+  0% {
+      transform-origin: bottom;
+      transform: scaleY(0);
+      opacity: 0;
+  }
+  100% {
+      transform-origin: bottom;
+      transform: scaleY(1);
+      opacity: 1;
+  }
+}
+
+@keyframes slideDown {
+  0% {
+      transform-origin: top;
+      transform: scaleY(0);
+      opacity: 0;
+  }
+  100% {
+      transform-origin: top;
+      transform: scaleY(1);
+      opacity: 1;
+  }
+}
+
+@keyframes slideToUp {
+  0% {
+      transform: translateY(100%);
+  }
+  100% {
+      transform: translateY(0);
+  }
+}
+
+@keyframes slideToDown {
+  0% {
+      transform: translateY(0);
+  }
+  100% {
+      transform: translateY(100%);
+  }
+}

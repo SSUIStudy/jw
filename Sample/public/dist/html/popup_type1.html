@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>gulp example</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi">
+    <link rel="stylesheet" type="text/css" href="../css/pages/import.css">
+<style>
+.layerPopup__Fix {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+
+.image {
+  display: block;
+  position: fixed;
+  bottom: -230px;
+  left: -230px;
+  animation: layerOpen 1s 2s forwards; /*animation-name ,animation-duration ,animation-delay ,animation-iteration-count , animation-direction */
+}
+
+.overlay {
+  position: absolute;
+  bottom:-370px;
+  left: -600px;
+  right: 0;
+  width: 0;
+  height: 0;
+  transition: .5s ease;
+}
+
+.layerPopup__Fix:hover .overlay {
+  width: 600px;
+  height: 370px;
+  bottom:0;
+  left:0;
+}
+
+@keyframes layerOpen {
+  0% {
+    left: -230px;
+    bottom: -230px;
+  }
+  100% {
+    left: 0;
+    bottom: 0;
+  }
+}
+
+
+</style>
+</head>
+<body>
+
+  <div class="layerPopup__Fix">
+    <img src="https://via.placeholder.com/230?text=LayerPopup1" alt="" class="image">
+    <a href="http://www.daum.net">
+    <div class="overlay">
+        <img src="https://via.placeholder.com/600x370/000?text=OpenLayerPopup2" alt="">
+    </div>
+    </a>
+  </div>
+
+
+</body>
+</html>

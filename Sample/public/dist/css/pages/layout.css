@@ -1,0 +1,85 @@
+.main_video {
+  width: 100%;
+  height: 100%;
+}
+
+.main_video img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-animation-name: cf4FadeInOut;
+          animation-name: cf4FadeInOut;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-duration: 6s;
+          animation-duration: 6s;
+}
+
+@-webkit-keyframes cf4FadeInOut {
+  0% {
+    opacity: 1;
+    -webkit-transform: scale(1.02, 1.02);
+            transform: scale(1.02, 1.02);
+  }
+  16% {
+    opacity: 1;
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+  }
+  33% {
+    opacity: 0;
+  }
+  84% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1.02, 1.02);
+            transform: scale(1.02, 1.02);
+  }
+}
+
+@keyframes cf4FadeInOut {
+  0% {
+    opacity: 1;
+    -webkit-transform: scale(1.02, 1.02);
+            transform: scale(1.02, 1.02);
+  }
+  16% {
+    opacity: 1;
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+  }
+  33% {
+    opacity: 0;
+  }
+  84% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1.02, 1.02);
+            transform: scale(1.02, 1.02);
+  }
+}
+
+#Area img:nth-of-type(1) {
+  -webkit-animation-delay: 4s;
+          animation-delay: 4s;
+}
+
+#Area img:nth-of-type(2) {
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+}
+
+#Area img:nth-of-type(3) {
+  -webkit-animation-delay: 0;
+          animation-delay: 0;
+}
+
+/*# sourceMappingURL=../../maps/pages/layout.css.map */
