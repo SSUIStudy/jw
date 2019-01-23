@@ -163,7 +163,7 @@ gulp.task('css', function() {
              .pipe(gulp.dest(DIST.CSS));
 });
 
-gulp.task('sass',gulp.series('css', function() {
+gulp.task('sass', ['css'], function() {
   return gulp.src(SRC.SASS)
              .pipe(sourcemaps.init())
              .pipe(sassdoc(config.sassdoc))
@@ -174,7 +174,7 @@ gulp.task('sass',gulp.series('css', function() {
              //.pipe(concatCss('./pages/common.css'))
              //.pipe(minifycss())
              .pipe(reload({stream: true}));
-}));
+});
 /**
  * -------------------------------
  * task : IMAGE
@@ -205,15 +205,14 @@ gulp.task('sprite', function() {
 */
 // task : clean | 이전 dist 폴더의 파일 삭제
 gulp.task('clean', function() {
- return del([DIR.DIST]);
+  return del.sync([DIR.DIST]);
 });
 
 
-
 // task : browserSync
-gulp.task('browserSync', gulp.series('html', 'js', 'sass', function () { 
+gulp.task('browserSync', ['html', 'js', 'sass'], function () { 
   return browserSync.init(config.browserSync);
-}));
+});
 
 // task : watch | 관찰할 업무 지정
 gulp.task('watch', function() {
@@ -227,4 +226,4 @@ gulp.task('watch', function() {
 });
 
 // task : default | 'gulp'를 실행하면 sass, watch task를 실행함
-gulp.task('default', gulp.series('clean','browserSync', 'font', 'watch'));
+gulp.task('default', ['clean', 'browserSync', 'font', 'watch']);
