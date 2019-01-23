@@ -1,36 +1,3 @@
-# Gulp
-
-```sh
-// init로 package.json 파일생성.-->프로젝트 생성시 무조건 선행작업
-$ npm init
-```
-
-### 0. Gulp 이전 버전 제거
-```sh
-$ npm uninstall --global gulp # 전역 Gulp 제거
-$ npm uninstall gulp          # 로컬 Gulp 제거 (프로젝트 디렉토리에서)
-```
-
-### 1. [Gulp 전역설치 및 사용할 디펜던시 설치하기]
-```sh
-$ npm install --global gulp  # 전역에 gulp-cli 설치, npm i -g gulp
-$ npm install --save-dev gulp #--save-dev 플래가는 devDependency로써만 설치, 이옵션은 gulp와  관련 디펜던시들은 개발과정에만 필요하기 때문 gulp 플러그인 설치할때도 --save-dev 를 줘야함.
-
-```
-
-### 1. [Gulp v4 설치 및 시작하기]
-
-```sh
-$ npm install --global gulp-cli  # 전역에 gulp-cli 설치, npm i -g gulp-cli
-```
-
-```sh
-// NPM
-$ npm install --save-dev gulpjs/gulp.git#4.0  # 로컬 디렉토리에 gulp v4 설치
-
-// Yarn
-$ yarn add --dev gulpjs/gulp.git#4.0
-```
 
 #### gulpfile.js 파일 생성
 
@@ -99,24 +66,6 @@ gulp.task('default',[]) 는  command-line에서 gulp만 실행했을때 기본�
 ```js
 gulp task-name
 ```
-#### 3. Bulding our gulpfile
-
-gulp-plugins | 설명
-
-gulp-webserver  | 웹서버처럼 동작하게 하는 플러그인
-gulp-concat     | js파일 병합
-gulp-uglify     | js 파일 압축
-gulp-sass       | sass 파일을 컴파일하기 위한 플러그인
-gulp-livereload | 웹브라우저를 리로드 하기위한 플러그인
-
-```js
-npm install gulp-webserver gulp-concat gulp-uglify gulp-minify-html gulp-sass gulp-livereload --save-dev
-
-```
-한줄로 설치 가능.
-
-
-
 
 
 

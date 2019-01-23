@@ -1,4 +1,18 @@
-# Gulp 설치 및 세팅 간단방법.
+
+## npm(node Package Manager)
+npm은 Node pageage Manager는 node.js에서 사용하는 모듈들을 패키지로 만들어 npm을 통해 관리하고 배포한다.
+이 모듈이 사용하고있는 다른 모듈의 의존성또한 자동으로 해결.
+
+### 0. 패키지 관리
+node sass 로 사용하기 때문에 이미 node는 설치가 되어있음.
+패키지 관리하는 방법만
+
+```sh
+$ npm init
+```
+
+
+## Gulp 설치 및 세팅 간단방법.
 
 ### 0. Gulp 이전 버전 제거
 ```sh
@@ -8,7 +22,7 @@ $ npm uninstall gulp          # 로컬 Gulp 제거 (프로젝트 디렉토리에
 ### 1. [Gulp v4 설치 및 시작하기]
 ```sh
 $ npm install --global gulp-cli  # 전역에 gulp-cli 설치, npm i -g gulp-cli
-$ npm install --save-dev gulpjs/gulp.git # 로컬 디렉토리에 gulp 
+$ npm install --save-dev gulpjs/gulp.git #-save-dev 플래가는 devDependency로써만 설치, 이옵션은 gulp와  관련 디펜던시들은 개발과정에만 필요하기 때문 gulp 플러그인 설치할때도 --save-dev 를 줘야함.
 ```
 
 
@@ -19,11 +33,21 @@ npm install gulp-uglify gulp-concat-css--save-dev #멀티는 나열하면 된다
 ```
 복사한 gulpfile.js에서  호출하는 플러그인을 모두 설치.
 
+#### 3. Bulding our gulpfile
+
+gulp-plugins | 설명
+
+gulp-concat     | js파일 병합
+gulp-uglify     | js 파일 압축
+gulp-sass       | sass 파일을 컴파일하기 위한 플러그인
+
 
 ### 3. [Gulp 시작]
 ```sh
 $ gulp
 ```
+
+
 
 ### 4. Gulp v4이 이전 버전과 달라진 점
 
