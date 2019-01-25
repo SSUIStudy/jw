@@ -13,6 +13,8 @@ var babelify     = require( 'babelify' );
 var browserify   = require( 'browserify' );
 var source       = require( 'vinyl-source-stream' );
 var buffer       = require( 'vinyl-buffer' );
+//https://github.com/gulpjs/vinyl
+//https://programmingsummaries.tistory.com/382
 var stripDebug   = require( 'gulp-strip-debug' );
 
 // Utility plugins
